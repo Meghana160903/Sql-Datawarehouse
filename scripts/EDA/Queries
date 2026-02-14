@@ -59,3 +59,23 @@ from gold.dim_customers c
 left join gold.fact_sales s  
 on c.customer_key = s.customer_key
 group by c.country
+
+----display top five highest revenue generating products 
+
+select top 5 p.product_name,sum(sales_amount) as total_revenue
+from gold.dim_products p 
+join gold.fact_sales s 
+on p.product_key = s.product_key 
+group by p.product_name
+order by sum(sales_amount) desc 
+
+----top 10 high revenue customers 
+
+select top 10 c.customer_key,c.first_name,sum(sales_amount) as total_revenue
+from gold.dim_customers c 
+join gold.fact_sales s 
+on c.customer_key = s.customer_key 
+group by c.first_name,c.customer_key
+order by sum(sales_amount) desc 
+
+
