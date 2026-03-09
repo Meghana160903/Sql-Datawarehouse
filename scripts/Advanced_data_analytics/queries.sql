@@ -93,6 +93,7 @@ order by prodcount DESC;
 -- Group Customers into three segments based on their spending behaviour
 -- VIP - at least he has a history of 12 months and spend more than 5000
 -- Regular - at least he has a history of 12 months but spent less or equal to 5000
+
 with cte as (
 SELECT
 customer_key as customer_key,
