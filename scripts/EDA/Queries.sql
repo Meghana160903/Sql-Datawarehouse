@@ -1,4 +1,10 @@
+--Qunatity sold
+select sum(quantity) as quantity_sold
+from gold.fact_sales
 
+---Average selling price  
+select sum(sales_amount) / sum(quantity) as avg_selling_price
+from gold.fact_sales
 
 SELECT DISTINCT Country from gold.dim_customers;
 
